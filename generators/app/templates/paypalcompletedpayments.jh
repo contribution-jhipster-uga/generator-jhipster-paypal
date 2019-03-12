@@ -1,0 +1,13 @@
+entity PaypalCompletedPayments {
+    date ZonedDateTime required
+    idPayment String required
+    currency String required
+    amount Float required min(0)
+    email String required
+    name String required
+    status String required
+}
+
+relationship ManyToOne{
+	PaypalCompletedPayments{user} to User{payment}
+}
