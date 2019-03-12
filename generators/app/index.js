@@ -175,7 +175,7 @@ module.exports = class extends BaseGenerator {
 
         var content = fs.readFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.module.ts`);
         var regex = /REPLACEHERE/gi;
-        var replacedContent = content.toString().replace(regex, this.baseName.charAt(0).toUpperCase() + this.baseName.substr(1));
+        var replacedContent = content.toString().replace(regex, this.angularAppName.charAt(0).toUpperCase() + this.angularAppName.substr(1));
         fs.writeFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.module.ts`, replacedContent);
 
         var replaceWithClientId = fs.readFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.component.ts`);
