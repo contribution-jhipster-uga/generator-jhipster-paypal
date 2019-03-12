@@ -7,7 +7,7 @@ export const PAYPAL_PAYMENTS_ROUTE: Route = {
   path: 'paypal-payments',
   component: PaypalPaymentsComponent,
   data: {
-    authorities: [],
+    authorities: ['ROLE_USER'],
     pageTitle: 'paypal-payments.title'
   },
   canActivate: [UserRouteAccessService]
