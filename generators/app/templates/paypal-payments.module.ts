@@ -19,4 +19,4 @@ import { PAYPAL_PAYMENTS_ROUTE, PaypalPaymentsComponent } from './';
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class REPLACEHEREPaypalPaymentsModule {}
+export class ANGULARAPPNAMEPaypalPaymentsModule {}

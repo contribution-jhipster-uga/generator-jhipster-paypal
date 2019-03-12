@@ -89,6 +89,7 @@ module.exports = class extends BaseGenerator {
         // show all variables
         this.log('\n--- some config read from config ---');
         this.log(`baseName=${this.baseName}`);
+
         this.log(`packageName=${this.packageName}`);
         this.log(`clientFramework=${this.clientFramework}`);
         this.log(`clientPackageManager=${this.clientPackageManager}`);
@@ -131,7 +132,6 @@ module.exports = class extends BaseGenerator {
                 );
                 this.template('paypal-payments0.component.ts', `${webappDir}app/paypal-payments/paypal-payments.component.ts`);
             }
-
             // APP MODULE
             this.addAngularModule(
                 _.upperFirst(this.getAngularAppName()),
@@ -175,7 +175,8 @@ module.exports = class extends BaseGenerator {
 
         var content = fs.readFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.module.ts`);
         var regex = /REPLACEHERE/gi;
-        var replacedContent = content.toString().replace(regex, this.angularAppName.charAt(0).toUpperCase() + this.angularAppName.substr(1));
+        var replacedContent = content.toString().replace(regex, this.getAngularXAppName());
+        replacedContent = replacedContent.toString().replace('ANGULARAPPNAME', this.angularAppName.charAt(0).toUpperCase() + this.angularAppName.substr(1));
         fs.writeFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.module.ts`, replacedContent);
 
         var replaceWithClientId = fs.readFileSync(`${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/paypal-payments/paypal-payments.component.ts`);
