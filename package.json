@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-paypal",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This module allows you to integrate Paypal payment into a JHipster project that works with angular. It creates a new paypal payment page on your jhipster project and adds a new entity (PaypalCompletedPayments) that retrieves information when a paypal payment is made.",
   "keywords": [
     "yeoman-generator",

@@ -145,7 +145,7 @@ module.exports = class extends BaseGenerator {
             const navbarPath = `${jhipsterConstants.CLIENT_MAIN_SRC_DIR}app/layouts/navbar/navbar.component.html`;
             let navbarCode;
             navbarCode = `
-            <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="paypal-payments" (click)="collapseNavbar()">
                     <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
                     <span>Paypal payments</span>
